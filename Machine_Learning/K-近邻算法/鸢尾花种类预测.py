@@ -25,6 +25,10 @@ def load_data():
 
 
 def plot_iris():
+    """
+    鸢尾花数据分布图绘制函数
+    :return: None
+    """
     iris = load_data()
     iris_df = pd.DataFrame(iris['data'], columns=['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width'])
     iris_df['Species'] = iris.target
@@ -36,7 +40,12 @@ def plot_iris():
     plt.show()
 
 
-def main():
+def iris_predict():
+    """
+    K-近邻算法
+    预测鸢尾花种类
+    :return: None
+    """
     iris = load_data()
     # 对鸢尾花数据集进行分割
 
@@ -66,6 +75,10 @@ def main():
     # 直接计算准确率
     score = estimator.score(x_test, y_test)
     print("准确率：", score)
+
+
+def main():
+    iris_predict()
 
 
 if __name__ == '__main__':
