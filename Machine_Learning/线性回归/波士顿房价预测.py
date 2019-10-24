@@ -27,7 +27,7 @@ def boston_predict_model_1(data):
     :return: None
     """
     # 1. 加载数据
-    data = load_data()
+    # data = load_data()
 
     # 2. 数据集划分
     x_train, x_test, y_train, y_test = train_test_split(data.data, data.target, random_state=22)
@@ -65,7 +65,7 @@ def boston_predict_model_2(data):
     :return: None
     """
     # 1. 加载数据
-    data = load_data()
+    # data = load_data()
 
     # 2. 数据集划分
     x_train, x_test, y_train, y_test = train_test_split(data.data, data.target, random_state=22)
