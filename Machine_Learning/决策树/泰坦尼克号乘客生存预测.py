@@ -38,6 +38,9 @@ def titan():
     # 4.2 模型保存与加载
     joblib.dump(estimator, './data/titan.pkl')
     # estimator = joblib.load('./data/titan.pkl')
+    # 保存树的结构
+    export_graphviz(estimator, out_file="./data/tree.dot",
+                    feature_names=['age', 'pclass=1st', 'pclass=2nd', 'pclass=3rd', '女性', '男性'])
 
     # 5. 模型评估
     score = estimator.score(x_test, y_test)
