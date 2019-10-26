@@ -40,12 +40,14 @@ def boston_predict_model_3(data):
     estimator = Ridge(alpha=1)
     # estimator = RidgeCV(alphas=(0.1, 1, 10))  # 岭回归与交叉验证
 
-    # 4.1 模型保存
-    joblib.dump(estimator, './data/boston_predict_model_3.pkl')
-    # 4.2 模型加载
-    # estimator = joblib.load('./data/boston_predict_model_3.pkl')
-    # 4.3 模型训练
+    # 4.1 模型训练
     estimator.fit(x_train, y_train)
+
+    # 4.2 模型保存
+    joblib.dump(estimator, './data/boston_predict_model_3.pkl')
+    # 4.3 模型加载
+    # estimator = joblib.load('./data/boston_predict_model_3.pkl')
+
 
     # 5. 模型评估
     # 5.1 获取模型系数

@@ -42,12 +42,12 @@ def cancer_predict():
 
     # 4. 机器学习-逻辑回归
     estimator = LogisticRegression()
-    # 4.1 模型保存
-    joblib.dump(estimator, './data/breast-cancer-wisconsin.pkl')
-    # 4.2 加载模型
-    # estimator = joblib.load('./data/breast-cancer-wisconsin.pkl')
-    # 4.3 模型训练
+    # 4.1 模型训练
     estimator.fit(x_train, y_train)
+    # 4.2 模型保存
+    joblib.dump(estimator, './data/breast-cancer-wisconsin.pkl')
+    # 4.3 加载模型
+    # estimator = joblib.load('./data/breast-cancer-wisconsin.pkl')
 
     # 5. 模型评估
     y_predict = estimator.predict(x_test)

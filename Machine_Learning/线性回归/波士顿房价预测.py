@@ -39,13 +39,13 @@ def boston_predict_model_1(data):
 
     # 4. 机器学习-线性回归（正规方程）
     estimator = LinearRegression()
-
-    # 4.1 模型保存
-    joblib.dump(estimator, './data/boston_predict_model_1.pkl')
-    # 4.2 模型加载
-    # estimator = joblib.load('./data/boston_predict_model_1.pkl')
-    # 4.3 模型训练
+    # 4.1 模型训练
     estimator.fit(x_train, y_train)
+
+    # 4.2 模型保存
+    joblib.dump(estimator, './data/boston_predict_model_1.pkl')
+    # 4.3 模型加载
+    # estimator = joblib.load('./data/boston_predict_model_1.pkl')
 
     # 5. 模型评估
     # 5.1 获取模型系数
@@ -77,13 +77,13 @@ def boston_predict_model_2(data):
 
     # 4. 机器学习-线性回归（特征方程）
     estimator = SGDRegressor(max_iter=1000)
-
-    # 4.1 模型保存
-    joblib.dump(estimator, './data/boston_predict_model_2.pkl')
-    # 4.2 模型加载
-    # estimator = joblib.load('./data/boston_predict_model_2.pkl')
-    # 4.3 模型训练
+    # 4.1 模型训练
     estimator.fit(x_train, y_train)
+
+    # 4.2 模型保存
+    joblib.dump(estimator, './data/boston_predict_model_2.pkl')
+    # 4.3 模型加载
+    # estimator = joblib.load('./data/boston_predict_model_2.pkl')
 
     # 5. 模型评估
     # 5.1 获取模型系数
@@ -98,7 +98,7 @@ def boston_predict_model_2(data):
 
 def main():
     data = load_data()
-    # boston_predict_model_1(data)
+    boston_predict_model_1(data)
     boston_predict_model_2(data)
 
 
